@@ -14,8 +14,8 @@ const OrderComplete = ({ orderId }: OrderCompleteProps) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="mb-6"
-      >
+        className="mb-6">
+
         <div className="rounded-full bg-green-100 p-3">
           <CheckCircle2 className="h-16 w-16 text-green-600" />
         </div>
@@ -25,8 +25,8 @@ const OrderComplete = ({ orderId }: OrderCompleteProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="text-center"
-      >
+        className="text-center">
+
         <h2 className="text-2xl font-bold mb-2">Thank You for Your Order!</h2>
         <p className="text-muted-foreground mb-6">
           Your order has been received and is being processed.
@@ -59,8 +59,8 @@ const OrderComplete = ({ orderId }: OrderCompleteProps) => {
           </Button>
         </div>
       </motion.div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default OrderComplete;

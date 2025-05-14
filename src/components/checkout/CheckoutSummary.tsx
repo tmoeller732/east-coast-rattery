@@ -18,15 +18,15 @@ const CheckoutSummary = ({ items, subtotal, shipping, tax, total }: CheckoutSumm
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {items.map((item) => (
-            <div key={item.id} className="flex justify-between items-center">
+          {items.map((item) =>
+          <div key={item.id} className="flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-md overflow-hidden flex-shrink-0">
-                  <img 
-                    src={item.image || "/placeholder.svg"} 
-                    alt={item.name} 
-                    className="h-full w-full object-cover" 
-                  />
+                  <img
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.name}
+                  className="h-full w-full object-cover" />
+
                 </div>
                 <div>
                   <p className="text-sm font-medium">{item.name}</p>
@@ -35,7 +35,7 @@ const CheckoutSummary = ({ items, subtotal, shipping, tax, total }: CheckoutSumm
               </div>
               <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
             </div>
-          ))}
+          )}
 
           <Separator className="my-4" />
 
@@ -62,8 +62,8 @@ const CheckoutSummary = ({ items, subtotal, shipping, tax, total }: CheckoutSumm
           </div>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default CheckoutSummary;

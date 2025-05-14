@@ -20,7 +20,7 @@ const PaymentForm = ({
   const formatCreditCard = (value: string) => {
     const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
     const matches = v.match(/\d{4,16}/g);
-    const match = (matches && matches[0]) || "";
+    const match = matches && matches[0] || "";
     const parts = [];
 
     for (let i = 0, len = match.length; i < len; i += 4) {
@@ -37,18 +37,18 @@ const PaymentForm = ({
   // Format expiry date
   const formatExpiryDate = (value: string) => {
     const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-    
+
     if (v.length >= 2) {
       return `${v.substring(0, 2)}/${v.substring(2, 4)}`;
     }
-    
+
     return v;
   };
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let { name, value } = e.target;
-    
+
     // Apply formatting
     if (name === "cardNumber") {
       value = formatCreditCard(value);
@@ -57,17 +57,17 @@ const PaymentForm = ({
     } else if (name === "cvv") {
       value = value.replace(/\D/g, "").substring(0, 4);
     }
-    
-    setPaymentInfo(prev => ({ ...prev, [name]: value }));
+
+    setPaymentInfo((prev) => ({ ...prev, [name]: value }));
   };
 
   // Handle billing address toggle
   const handleBillingAddressToggle = (checked: boolean) => {
-    setPaymentInfo(prev => ({ 
-      ...prev, 
+    setPaymentInfo((prev) => ({
+      ...prev,
       billingAddressSameAsShipping: checked,
       // If using shipping address, clear any previously entered billing address
-      billingAddress: checked ? undefined : prev.billingAddress 
+      billingAddress: checked ? undefined : prev.billingAddress
     }));
   };
 
@@ -95,8 +95,8 @@ const PaymentForm = ({
                 placeholder="1234 5678 9012 3456"
                 maxLength={19}
                 className="pl-10"
-                required
-              />
+                required />
+
               <CreditCard className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             </div>
           </div>
@@ -109,8 +109,8 @@ const PaymentForm = ({
               value={paymentInfo.nameOnCard}
               onChange={handleInputChange}
               placeholder="John Doe"
-              required
-            />
+              required />
+
           </div>
           
           <div className="grid grid-cols-2 gap-4">
@@ -123,8 +123,8 @@ const PaymentForm = ({
                 onChange={handleInputChange}
                 placeholder="MM/YY"
                 maxLength={5}
-                required
-              />
+                required />
+
             </div>
             
             <div className="space-y-2">
@@ -136,8 +136,8 @@ const PaymentForm = ({
                 onChange={handleInputChange}
                 placeholder="123"
                 maxLength={4}
-                required
-              />
+                required />
+
             </div>
           </div>
         </div>
@@ -149,80 +149,80 @@ const PaymentForm = ({
           <Switch
             id="billing-same"
             checked={paymentInfo.billingAddressSameAsShipping}
-            onCheckedChange={handleBillingAddressToggle}
-          />
+            onCheckedChange={handleBillingAddressToggle} />
+
           <Label htmlFor="billing-same">Same as shipping address</Label>
         </div>
         
-        {!paymentInfo.billingAddressSameAsShipping && (
-          <div className="space-y-4 mt-6">
+        {!paymentInfo.billingAddressSameAsShipping &&
+        <div className="space-y-4 mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="billingFirstName">First Name *</Label>
                 <Input
-                  id="billingFirstName"
-                  name="billingFirstName"
-                  required
-                />
+                id="billingFirstName"
+                name="billingFirstName"
+                required />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="billingLastName">Last Name *</Label>
                 <Input
-                  id="billingLastName"
-                  name="billingLastName"
-                  required
-                />
+                id="billingLastName"
+                name="billingLastName"
+                required />
+
               </div>
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="billingAddress1">Address Line 1 *</Label>
               <Input
-                id="billingAddress1"
-                name="billingAddress1"
-                required
-              />
+              id="billingAddress1"
+              name="billingAddress1"
+              required />
+
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="billingAddress2">Address Line 2</Label>
               <Input
-                id="billingAddress2"
-                name="billingAddress2"
-              />
+              id="billingAddress2"
+              name="billingAddress2" />
+
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="billingCity">City *</Label>
                 <Input
-                  id="billingCity"
-                  name="billingCity"
-                  required
-                />
+                id="billingCity"
+                name="billingCity"
+                required />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="billingState">State *</Label>
                 <Input
-                  id="billingState"
-                  name="billingState"
-                  required
-                />
+                id="billingState"
+                name="billingState"
+                required />
+
               </div>
               <div className="space-y-2">
                 <Label htmlFor="billingZip">ZIP Code *</Label>
                 <Input
-                  id="billingZip"
-                  name="billingZip"
-                  required
-                />
+                id="billingZip"
+                name="billingZip"
+                required />
+
               </div>
             </div>
           </div>
-        )}
+        }
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default PaymentForm;
