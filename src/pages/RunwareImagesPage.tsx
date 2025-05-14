@@ -25,7 +25,7 @@ export default function RunwareImagesPage() {
       id: image.id || image.image_id,
       title: image.title,
       url: image.url,
-      description: image.description,
+      description: image.description
     });
     setShowImageDialog(true);
   };
@@ -34,8 +34,8 @@ export default function RunwareImagesPage() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="container py-8"
-    >
+      className="container py-8">
+
       <div className="flex flex-col space-y-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight">Runware Images</h1>
@@ -75,13 +75,13 @@ export default function RunwareImagesPage() {
           </DialogHeader>
           
           <div className="mt-4 overflow-hidden rounded-lg">
-            {selectedImage && (
-              <img 
-                src={selectedImage.url} 
-                alt={selectedImage.title}
-                className="w-full h-auto object-contain"
-              />
-            )}
+            {selectedImage &&
+            <img
+              src={selectedImage.url}
+              alt={selectedImage.title}
+              className="w-full h-auto object-contain" />
+
+            }
           </div>
           
           <div className="flex justify-between mt-4">
@@ -94,6 +94,6 @@ export default function RunwareImagesPage() {
           </div>
         </DialogContent>
       </Dialog>
-    </motion.div>
-  );
+    </motion.div>);
+
 }
