@@ -9,7 +9,7 @@ const Breadcrumb = React.forwardRef<
   React.ComponentPropsWithoutRef<"nav"> & {
     separator?: React.ReactNode;
   }>(
-  ({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} data-id="dx60f91tm" data-path="src/components/ui/breadcrumb.tsx" />);
+  ({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />);
 Breadcrumb.displayName = "Breadcrumb";
 
 const BreadcrumbList = React.forwardRef<
@@ -22,7 +22,7 @@ const BreadcrumbList = React.forwardRef<
       "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
       className
     )}
-    {...props} data-id="ivsr9zl3l" data-path="src/components/ui/breadcrumb.tsx" />
+    {...props} />
 
 );
 BreadcrumbList.displayName = "BreadcrumbList";
@@ -34,7 +34,7 @@ const BreadcrumbItem = React.forwardRef<
   <li
     ref={ref}
     className={cn("inline-flex items-center gap-1.5", className)}
-    {...props} data-id="5okolbrr3" data-path="src/components/ui/breadcrumb.tsx" />
+    {...props} />
 
 );
 BreadcrumbItem.displayName = "BreadcrumbItem";
@@ -67,7 +67,7 @@ const BreadcrumbPage = React.forwardRef<
     aria-disabled="true"
     aria-current="page"
     className={cn("font-normal text-foreground", className)}
-    {...props} data-id="epcmq0b9b" data-path="src/components/ui/breadcrumb.tsx" />
+    {...props} />
 
 );
 BreadcrumbPage.displayName = "BreadcrumbPage";
@@ -81,7 +81,7 @@ const BreadcrumbSeparator = ({
   role="presentation"
   aria-hidden="true"
   className={cn("[&>svg]:w-3.5 [&>svg]:h-3.5", className)}
-  {...props} data-id="iendyr9eg" data-path="src/components/ui/breadcrumb.tsx">
+  {...props}>
 
     {children ?? <ChevronRight />}
   </li>;
@@ -96,10 +96,10 @@ const BreadcrumbEllipsis = ({
   role="presentation"
   aria-hidden="true"
   className={cn("flex h-9 w-9 items-center justify-center", className)}
-  {...props} data-id="adhy2xccq" data-path="src/components/ui/breadcrumb.tsx">
+  {...props}>
 
     <MoreHorizontal className="h-4 w-4" />
-    <span className="sr-only" data-id="70ea4qffh" data-path="src/components/ui/breadcrumb.tsx">More</span>
+    <span className="sr-only">More</span>
   </span>;
 
 BreadcrumbEllipsis.displayName = "BreadcrumbElipssis";

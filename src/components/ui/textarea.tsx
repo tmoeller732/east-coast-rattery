@@ -13,7 +13,7 @@ const Textarea = React.forwardRef<
           className
         )}
         ref={ref}
-        {...props} data-id="e657u5y2o" data-path="src/components/ui/textarea.tsx" />);
+        {...props} />);
 
 
   });
