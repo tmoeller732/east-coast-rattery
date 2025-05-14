@@ -38,35 +38,39 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center justify-between flex-1">
-          {/* Logo (left) with adjacent navigation */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center mr-1">
-              <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
-                alt="East Coast Rattery Logo"
-                className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
-            </Link>
-            
-            {/* Left navigation (moved close to logo) */}
-            <nav className="flex items-center space-x-0.5 ml-2">
-              <Button
-                variant="ghost"
-                className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-                asChild>
-                <Link to="/">Home</Link>
-              </Button>
-              <Button
-                variant="ghost"
-                className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shop' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-                asChild>
-                <Link to="/shop">Shop</Link>
-              </Button>
-              <Button
-                variant="ghost"
-                className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shipping' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-                asChild>
-                <Link to="/shipping">Shipping</Link>
-              </Button>
+          {/* Left navigation */}
+          <nav className="flex items-center space-x-0.5">
+            <Button
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
+              <Link to="/">Home</Link>
+            </Button>
+            <Button
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shop' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
+              <Link to="/shop">Shop</Link>
+            </Button>
+            <Button
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shipping' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
+              <Link to="/shipping">Shipping</Link>
+            </Button>
+          </nav>
+          
+          {/* Logo (center) */}
+          <Link to="/" className="flex items-center mx-6">
+            <img
+              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
+              alt="East Coast Rattery Logo"
+              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
+          </Link>
+          
+          {/* Right navigation */}
+          <div className="flex items-center justify-end">
+            <nav className="flex items-center space-x-0.5 mr-4">
               <Button
                 variant="ghost"
                 className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
@@ -86,10 +90,7 @@ const Navbar = () => {
                 <Link to="/live-pickup">Live Pickup (NJ)</Link>
               </Button>
             </nav>
-          </div>
-          
-          {/* Right navigation (only account and cart) */}
-          <div>
+            
             {/* Account and Cart icons */}
             <div className="flex items-center space-x-2">
               <Button variant="outline" size="icon" className="hover:text-green-500 hover:border-green-500">
@@ -108,9 +109,9 @@ const Navbar = () => {
         <div className="flex-1 flex justify-center md:hidden">
           <Link to="/" className="flex items-center">
             <img
-              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
-              alt="East Coast Rattery Logo"
-              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
+                alt="East Coast Rattery Logo"
+                className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
           </Link>
         </div>
 
@@ -170,8 +171,8 @@ const Navbar = () => {
             </div>
           </div>
       </div>
-    </header>);
-
+    </header>
+  );
 };
 
 export default Navbar;
