@@ -5,6 +5,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
+import { ShoppingCart, Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 // Mock product data
 const frozenProducts = [
@@ -124,6 +127,9 @@ type ProductProps = {
 
 const ProductCard = ({ product, localOnly = false }: ProductProps) => {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0].id);
+  const [isAdding, setIsAdding] = useState(false);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const selectedSizeObj = product.sizes.find((size) => size.id === selectedSize);
 
@@ -173,7 +179,39 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
         </RadioGroup>
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-green-600 hover:bg-green-700 text-white">Add to Cart</Button>
+        <Button 
+          className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
+          onClick={() => {
+            if (!selectedSizeObj) return;
+            setIsAdding(true);
+            setTimeout(() => {
+              addItem({
+                id: `${product.id}-${selectedSize}`,
+                name: `${product.name} - ${selectedSizeObj.name}`,
+                price: selectedSizeObj.price,
+                image: product.image
+              });
+              toast({
+                title: "Added to cart",
+                description: `${product.name} - ${selectedSizeObj.name} has been added to your cart.`,
+              });
+              setIsAdding(false);
+            }, 500);
+          }}
+          disabled={isAdding}
+        >
+          {isAdding ? (
+            <>
+              <Check className="h-4 w-4 animate-ping" />
+              Adding...
+            </>
+          ) : (
+            <>
+              <ShoppingCart className="h-4 w-4" />
+              Add to Cart
+            </>
+          )}
+        </Button>
       </CardFooter>
     </Card>);
 
