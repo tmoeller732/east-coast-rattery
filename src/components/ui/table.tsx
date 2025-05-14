@@ -6,11 +6,11 @@ const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) =>
-  <div className="relative w-full overflow-auto">
+  <div className="relative w-full overflow-auto" data-id="zu2zwfch8" data-path="src/components/ui/table.tsx">
     <table
       ref={ref}
       className={cn("w-full caption-bottom text-sm", className)}
-      {...props} />
+      {...props} data-id="d6fwctyn5" data-path="src/components/ui/table.tsx" />
 
   </div>
 );
@@ -20,7 +20,7 @@ const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...props }, ref) =>
-  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} data-id="vx1atvogc" data-path="src/components/ui/table.tsx" />
 );
 TableHeader.displayName = "TableHeader";
 
@@ -31,7 +31,7 @@ const TableBody = React.forwardRef<
   <tbody
     ref={ref}
     className={cn("[&_tr:last-child]:border-0", className)}
-    {...props} />
+    {...props} data-id="lifc14q9q" data-path="src/components/ui/table.tsx" />
 
 );
 TableBody.displayName = "TableBody";
@@ -46,7 +46,7 @@ const TableFooter = React.forwardRef<
       "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
       className
     )}
-    {...props} />
+    {...props} data-id="tx15gqc5o" data-path="src/components/ui/table.tsx" />
 
 );
 TableFooter.displayName = "TableFooter";
@@ -61,7 +61,7 @@ const TableRow = React.forwardRef<
       "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
       className
     )}
-    {...props} />
+    {...props} data-id="1ozczmo7u" data-path="src/components/ui/table.tsx" />
 
 );
 TableRow.displayName = "TableRow";
@@ -76,7 +76,7 @@ const TableHead = React.forwardRef<
       "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
-    {...props} />
+    {...props} data-id="z0v4gudhb" data-path="src/components/ui/table.tsx" />
 
 );
 TableHead.displayName = "TableHead";
@@ -91,7 +91,7 @@ const TableCell = React.forwardRef<
       "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
-    {...props} />
+    {...props} data-id="g4uyrki23" data-path="src/components/ui/table.tsx" />
 
 );
 TableCell.displayName = "TableCell";
@@ -103,7 +103,7 @@ const TableCaption = React.forwardRef<
   <caption
     ref={ref}
     className={cn("mt-4 text-sm text-muted-foreground", className)}
-    {...props} />
+    {...props} data-id="oo0dnq2za" data-path="src/components/ui/table.tsx" />
 
 );
 TableCaption.displayName = "TableCaption";

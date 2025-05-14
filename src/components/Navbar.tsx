@@ -22,35 +22,35 @@ const Navbar = () => {
       isScrolled ?
       "fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-md" :
       "bg-background"}`
-      }>
+      } data-id="srw7b0b63" data-path="src/components/Navbar.tsx">
 
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center" data-id="fd1r459s5" data-path="src/components/Navbar.tsx">
         {/* Mobile menu button */}
         <button
           className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} data-id="ult38kat7" data-path="src/components/Navbar.tsx">
 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6" data-id="ly0dm1sr1" data-path="src/components/Navbar.tsx">
+            <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} data-id="10e41p9b3" data-path="src/components/Navbar.tsx" />
           </svg>
         </button>
 
         {/* Logo (centered on desktop) */}
-        <div className="flex-1 flex justify-center md:justify-start">
+        <div className="flex-1 flex justify-center md:justify-start" data-id="kjj9t1u2v" data-path="src/components/Navbar.tsx">
           <Link to="/" className="flex items-center">
-            <img 
-              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png" 
-              alt="East Coast Rattery Logo" 
-              className="h-12 w-auto transition-transform duration-300 hover:scale-105" 
-            />
-            <span className="ml-2 text-2xl font-bold text-green-500 transition-all duration-300 hover:text-green-400 hidden sm:inline">
-              East Coast Rattery
-            </span>
+            <img
+              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
+              alt="East Coast Rattery Logo"
+              className="h-12 w-auto transition-transform duration-300 hover:scale-105" data-id="gawuoqfwg" data-path="src/components/Navbar.tsx" />
+
+            
+
+
           </Link>
         </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="hidden md:flex items-center space-x-1" data-id="q8sn775es" data-path="src/components/Navbar.tsx">
           <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
             <Link to="/">Home</Link>
           </Button>
@@ -71,20 +71,20 @@ const Navbar = () => {
           </Button>
           <Button variant="outline" size="icon" className="ml-4 hover:text-green-500 hover:border-green-500">
             <ShoppingCart className="h-5 w-5" />
-            <span className="sr-only">Cart</span>
+            <span className="sr-only" data-id="1mvdzlr28" data-path="src/components/Navbar.tsx">Cart</span>
           </Button>
         </nav>
 
         {/* Cart icon for mobile */}
         <Button variant="outline" size="icon" className="md:hidden hover:text-green-500 hover:border-green-500">
           <ShoppingCart className="h-5 w-5" />
-          <span className="sr-only">Cart</span>
+          <span className="sr-only" data-id="nw023w9u6" data-path="src/components/Navbar.tsx">Cart</span>
         </Button>
 
         {/* Mobile menu */}
         {isMobileMenuOpen &&
-        <div className="absolute top-full left-0 right-0 bg-background border-b border-border z-50 md:hidden">
-            <div className="container mx-auto py-4 px-4 flex flex-col space-y-2">
+        <div className="absolute top-full left-0 right-0 bg-background border-b border-border z-50 md:hidden" data-id="261xmmpgw" data-path="src/components/Navbar.tsx">
+            <div className="container mx-auto py-4 px-4 flex flex-col space-y-2" data-id="6d0r4v0jt" data-path="src/components/Navbar.tsx">
               <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               </Button>

@@ -129,11 +129,11 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
 
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:border-green-500 h-full flex flex-col bg-background/40 backdrop-blur-sm">
-      <div className="relative">
+      <div className="relative" data-id="gr42vmjvi" data-path="src/pages/ShopPage.tsx">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105" />
+          className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105" data-id="lgojm9r9l" data-path="src/pages/ShopPage.tsx" />
 
         {localOnly &&
         <Badge className="absolute top-2 right-2 bg-amber-600">
@@ -143,20 +143,20 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
       </div>
       <CardHeader>
         <CardTitle className="flex items-start justify-between">
-          <span>{product.name}</span>
-          <span className="text-green-500">${selectedSizeObj?.price.toFixed(2)}</span>
+          <span data-id="e3c63l1ec" data-path="src/pages/ShopPage.tsx">{product.name}</span>
+          <span className="text-green-500" data-id="9bqf3mm1d" data-path="src/pages/ShopPage.tsx">${selectedSizeObj?.price.toFixed(2)}</span>
         </CardTitle>
-        <div className="text-sm text-muted-foreground">Weight: {product.weightRange}</div>
+        <div className="text-sm text-muted-foreground" data-id="26mlkcgs8" data-path="src/pages/ShopPage.tsx">Weight: {product.weightRange}</div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
+        <p className="text-sm text-muted-foreground mb-4" data-id="fjh4mnji3" data-path="src/pages/ShopPage.tsx">{product.description}</p>
         <RadioGroup
           value={selectedSize.toString()}
           onValueChange={(value) => setSelectedSize(parseInt(value))}
           className="flex flex-wrap gap-2 mb-4">
 
           {product.sizes.map((size) =>
-          <div key={size.id} className="flex items-center space-x-2">
+          <div key={size.id} className="flex items-center space-x-2" data-id="as37bdyx0" data-path="src/pages/ShopPage.tsx">
               <RadioGroupItem
               value={size.id.toString()}
               id={`${product.id}-${size.id}`}
@@ -181,12 +181,12 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
 
 const ShopPage = () => {
   return (
-    <div className="min-h-screen bg-background pb-16">
+    <div className="min-h-screen bg-background pb-16" data-id="xhlblvudg" data-path="src/pages/ShopPage.tsx">
       {/* Page Header */}
-      <div className="bg-black py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-green-500">Shop ASF Rats</h1>
-          <p className="text-center text-gray-300 max-w-3xl mx-auto">
+      <div className="bg-black py-16" data-id="ctvnqjlhw" data-path="src/pages/ShopPage.tsx">
+        <div className="container mx-auto px-4" data-id="9utamq2ui" data-path="src/pages/ShopPage.tsx">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-green-500" data-id="qys75ctc0" data-path="src/pages/ShopPage.tsx">Shop ASF Rats</h1>
+          <p className="text-center text-gray-300 max-w-3xl mx-auto" data-id="z85i3ivsg" data-path="src/pages/ShopPage.tsx">
             Browse our selection of quality African Soft Fur Rats for pets and feeders. 
             We offer frozen rats shipped nationwide and live rats for local pickup in New Jersey.
           </p>
@@ -194,7 +194,7 @@ const ShopPage = () => {
       </div>
 
       {/* Product Tabs */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12" data-id="c2xar6e09" data-path="src/pages/ShopPage.tsx">
         <Tabs defaultValue="frozen" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger
@@ -212,7 +212,7 @@ const ShopPage = () => {
           </TabsList>
           
           <TabsContent value="frozen" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-id="he6ivex54" data-path="src/pages/ShopPage.tsx">
               {frozenProducts.map((product) =>
               <ProductCard key={product.id} product={product} />
               )}
@@ -220,14 +220,14 @@ const ShopPage = () => {
           </TabsContent>
           
           <TabsContent value="live" className="mt-6">
-            <div className="bg-amber-600/20 border border-amber-600/50 rounded-lg p-4 mb-6">
-              <h3 className="font-semibold text-amber-400 mb-2">Local Pickup Information</h3>
-              <p className="text-gray-300">
+            <div className="bg-amber-600/20 border border-amber-600/50 rounded-lg p-4 mb-6" data-id="h23v4jjn2" data-path="src/pages/ShopPage.tsx">
+              <h3 className="font-semibold text-amber-400 mb-2" data-id="2umktwr3k" data-path="src/pages/ShopPage.tsx">Local Pickup Information</h3>
+              <p className="text-gray-300" data-id="fubqvvcq3" data-path="src/pages/ShopPage.tsx">
                 Live ASF rats are available for local pickup in Bayville, NJ only. We do not ship live animals.
-                Please schedule your pickup in advance using our <a href="/live-pickup" className="text-green-400 hover:underline">pickup scheduler</a>.
+                Please schedule your pickup in advance using our <a href="/live-pickup" className="text-green-400 hover:underline" data-id="q12zqftkt" data-path="src/pages/ShopPage.tsx">pickup scheduler</a>.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-id="aonccpvqe" data-path="src/pages/ShopPage.tsx">
               {liveProducts.map((product) =>
               <ProductCard key={product.id} product={product} localOnly />
               )}
@@ -237,14 +237,14 @@ const ShopPage = () => {
       </div>
 
       {/* Shipping Notice */}
-      <div className="container mx-auto px-4 mt-8">
-        <div className="bg-green-900/30 border border-green-700 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-green-500 mb-4">Shipping Information</h3>
-          <p className="text-gray-300 mb-3">
+      <div className="container mx-auto px-4 mt-8" data-id="ns2deod7v" data-path="src/pages/ShopPage.tsx">
+        <div className="bg-green-900/30 border border-green-700 rounded-lg p-6" data-id="a648wcbpb" data-path="src/pages/ShopPage.tsx">
+          <h3 className="text-xl font-semibold text-green-500 mb-4" data-id="np25edg2y" data-path="src/pages/ShopPage.tsx">Shipping Information</h3>
+          <p className="text-gray-300 mb-3" data-id="i5t9kn7xi" data-path="src/pages/ShopPage.tsx">
             We ship frozen ASF rats nationwide using FedEx overnight or 2-day shipping options. All orders are properly
             packed with dry ice to ensure your feeders arrive in perfect condition.
           </p>
-          <p className="text-gray-300 mb-3">
+          <p className="text-gray-300 mb-3" data-id="cwvp0nq8v" data-path="src/pages/ShopPage.tsx">
             Orders placed before 12pm EST Monday-Thursday will ship the same day. Orders placed after 12pm EST or on Friday-Sunday
             will ship the following business day.
           </p>
