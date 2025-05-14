@@ -69,7 +69,7 @@ const Navbar = () => {
           </Link>
           
           {/* Right navigation */}
-          <div className="flex items-center flex-1">
+          <div className="flex items-center justify-between flex-1">
             <nav className="flex items-center space-x-0.5 ml-4">
               <Button
                 variant="ghost"
@@ -90,18 +90,18 @@ const Navbar = () => {
                 <Link to="/live-pickup">Live Pickup (NJ)</Link>
               </Button>
             </nav>
-            
-            {/* Account and Cart icons */}
-            <div className="flex items-center space-x-2">
-              <Button variant="outline" size="icon" className="hover:text-green-500 hover:border-green-500">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Account</span>
-              </Button>
-              <Button variant="outline" size="icon" className="hover:text-green-500 hover:border-green-500">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="sr-only">Cart</span>
-              </Button>
-            </div>
+          </div>
+          
+          {/* Account and Cart icons */}
+          <div className="flex items-center space-x-2 ml-4">
+            <Button variant="outline" size="icon" className="hover:text-green-500 hover:border-green-500">
+              <User className="h-5 w-5" />
+              <span className="sr-only">Account</span>
+            </Button>
+            <Button variant="outline" size="icon" className="hover:text-green-500 hover:border-green-500">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="sr-only">Cart</span>
+            </Button>
           </div>
         </div>
 
