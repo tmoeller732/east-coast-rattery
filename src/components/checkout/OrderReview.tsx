@@ -82,17 +82,17 @@ const OrderReview = ({
             
             <h3 className="font-medium mb-4">Billing Address</h3>
             <div className="space-y-1 text-sm">
-              {paymentInfo.billingAddressSameAsShipping ?
-              <>
+              {paymentInfo.billingAddressSameAsShipping ? (
+                <>
                   <p className="italic text-muted-foreground">Same as shipping address</p>
                   <p className="font-medium">{shippingAddress.firstName} {shippingAddress.lastName}</p>
                   <p>{shippingAddress.address1}</p>
                   {shippingAddress.address2 && <p>{shippingAddress.address2}</p>}
                   <p>{shippingAddress.city}, {shippingAddress.state} {shippingAddress.zipCode}</p>
-                </> :
-
-              <p>Custom billing address</p>
-              }
+                </>
+              ) : (
+                <p>Custom billing address</p>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -101,14 +101,14 @@ const OrderReview = ({
       <div>
         <h3 className="font-medium mb-4">Order Items</h3>
         <div className="space-y-4">
-          {cartItems.map((item) =>
-          <div key={item.id} className="flex items-center gap-4">
+          {cartItems.map(item => (
+            <div key={item.id} className="flex items-center gap-4">
               <div className="h-16 w-16 rounded-md overflow-hidden flex-shrink-0">
-                <img
-                src={item.image || "/placeholder.svg"}
-                alt={item.name}
-                className="h-full w-full object-cover" />
-
+                <img 
+                  src={item.image || "/placeholder.svg"} 
+                  alt={item.name} 
+                  className="h-full w-full object-cover" 
+                />
               </div>
               <div className="flex-grow">
                 <h4 className="font-medium">{item.name}</h4>
@@ -119,7 +119,7 @@ const OrderReview = ({
                 <p className="text-sm text-muted-foreground">${item.price.toFixed(2)} each</p>
               </div>
             </div>
-          )}
+          ))}
         </div>
         
         <Separator className="my-6" />
@@ -144,8 +144,8 @@ const OrderReview = ({
           </div>
         </div>
       </div>
-    </div>);
-
+    </div>
+  );
 };
 
 export default OrderReview;

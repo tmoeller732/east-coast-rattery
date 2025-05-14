@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, ImageIcon } from "lucide-react";
+import { ShoppingCart, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
@@ -99,12 +99,6 @@ const Navbar = () => {
                 className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/live-pickup' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
                 asChild>
                 <Link to="/live-pickup">Live Pickup (NJ)</Link>
-              </Button>
-              <Button
-                variant="ghost"
-                className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/runware-images' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-                asChild>
-                <Link to="/runware-images">Runware Images</Link>
               </Button>
             </nav>
           </div>
@@ -237,12 +231,6 @@ const Navbar = () => {
               className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/contact' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
               asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-              </Button>
-              <Button
-              variant="ghost"
-              className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/runware-images' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-              asChild>
-                <Link to="/runware-images" onClick={() => setIsMobileMenuOpen(false)}>Runware Images</Link>
               </Button>
             </div>
           </div>

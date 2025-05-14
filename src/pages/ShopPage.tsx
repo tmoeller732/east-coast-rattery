@@ -217,7 +217,7 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
           }
         </Button>
         <Button
-          variant="outline"
+          variant="outline" 
           className="w-full border-green-500 text-green-500 hover:bg-green-100 dark:hover:bg-green-900/20"
           onClick={() => window.location.href = `/product/${product.id}`}>
           View Details

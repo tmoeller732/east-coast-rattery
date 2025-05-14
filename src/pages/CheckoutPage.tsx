@@ -44,35 +44,35 @@ export type ShippingMethod = {
 };
 
 const shippingMethods: ShippingMethod[] = [
-{
-  id: "fedex-standard",
-  name: "FedEx 2-Day",
-  description: "Delivery within 2 business days",
-  price: 19.99,
-  estimatedDelivery: "2 business days"
-},
-{
-  id: "fedex-priority",
-  name: "FedEx Overnight",
-  description: "Priority overnight delivery",
-  price: 29.99,
-  estimatedDelivery: "Next business day"
-},
-{
-  id: "local-pickup",
-  name: "Local Pickup",
-  description: "Pickup from our Bayville, NJ location",
-  price: 0,
-  estimatedDelivery: "Schedule your pickup"
-}];
-
+  {
+    id: "fedex-standard",
+    name: "FedEx 2-Day",
+    description: "Delivery within 2 business days",
+    price: 19.99,
+    estimatedDelivery: "2 business days"
+  },
+  {
+    id: "fedex-priority",
+    name: "FedEx Overnight",
+    description: "Priority overnight delivery",
+    price: 29.99,
+    estimatedDelivery: "Next business day"
+  },
+  {
+    id: "local-pickup",
+    name: "Local Pickup",
+    description: "Pickup from our Bayville, NJ location",
+    price: 0,
+    estimatedDelivery: "Schedule your pickup"
+  }
+];
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const { items, getCartTotal, clearCart } = useCart();
   const [currentStep, setCurrentStep] = useState(1);
   const [orderId, setOrderId] = useState<string | null>(null);
-
+  
   // Form states
   const [shippingAddress, setShippingAddress] = useState<Address>({
     firstName: "",
@@ -86,9 +86,9 @@ const CheckoutPage = () => {
     zipCode: "",
     country: "US"
   });
-
+  
   const [selectedShippingMethod, setSelectedShippingMethod] = useState<ShippingMethod | null>(null);
-
+  
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({
     cardNumber: "",
     nameOnCard: "",
@@ -117,11 +117,11 @@ const CheckoutPage = () => {
       setOrderId(newOrderId);
       clearCart();
     }
-    setCurrentStep((prev) => Math.min(prev + 1, 4));
+    setCurrentStep(prev => Math.min(prev + 1, 4));
   };
 
   const prevStep = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 1));
+    setCurrentStep(prev => Math.max(prev - 1, 1));
   };
 
   // Check if step is complete
@@ -137,15 +137,15 @@ const CheckoutPage = () => {
           shippingAddress.city !== "" &&
           shippingAddress.state !== "" &&
           shippingAddress.zipCode !== "" &&
-          selectedShippingMethod !== null);
-
+          selectedShippingMethod !== null
+        );
       case 2: // Payment
         return (
           paymentInfo.cardNumber !== "" &&
           paymentInfo.nameOnCard !== "" &&
           paymentInfo.expiryDate !== "" &&
-          paymentInfo.cvv !== "");
-
+          paymentInfo.cvv !== ""
+        );
       case 3: // Review
         return true;
       default:
@@ -158,8 +158,8 @@ const CheckoutPage = () => {
       className="container max-w-7xl mx-auto px-4 py-12"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}>
-
+      transition={{ duration: 0.5 }}
+    >
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Checkout</h1>
         <p className="text-muted-foreground">Complete your purchase</p>
@@ -179,83 +179,83 @@ const CheckoutPage = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {currentStep === 1 &&
-              <ShippingForm
-                shippingAddress={shippingAddress}
-                setShippingAddress={setShippingAddress}
-                shippingMethods={shippingMethods}
-                selectedShippingMethod={selectedShippingMethod}
-                setSelectedShippingMethod={setSelectedShippingMethod} />
+              {currentStep === 1 && (
+                <ShippingForm
+                  shippingAddress={shippingAddress}
+                  setShippingAddress={setShippingAddress}
+                  shippingMethods={shippingMethods}
+                  selectedShippingMethod={selectedShippingMethod}
+                  setSelectedShippingMethod={setSelectedShippingMethod}
+                />
+              )}
 
-              }
+              {currentStep === 2 && (
+                <PaymentForm
+                  paymentInfo={paymentInfo}
+                  setPaymentInfo={setPaymentInfo}
+                  shippingAddress={shippingAddress}
+                />
+              )}
 
-              {currentStep === 2 &&
-              <PaymentForm
-                paymentInfo={paymentInfo}
-                setPaymentInfo={setPaymentInfo}
-                shippingAddress={shippingAddress} />
+              {currentStep === 3 && (
+                <OrderReview
+                  shippingAddress={shippingAddress}
+                  shippingMethod={selectedShippingMethod!}
+                  paymentInfo={paymentInfo}
+                  cartItems={items}
+                  subtotal={subtotal}
+                  shipping={shipping}
+                  tax={tax}
+                  total={total}
+                />
+              )}
 
-              }
+              {currentStep === 4 && (
+                <OrderComplete orderId={orderId!} />
+              )}
 
-              {currentStep === 3 &&
-              <OrderReview
-                shippingAddress={shippingAddress}
-                shippingMethod={selectedShippingMethod!}
-                paymentInfo={paymentInfo}
-                cartItems={items}
-                subtotal={subtotal}
-                shipping={shipping}
-                tax={tax}
-                total={total} />
-
-              }
-
-              {currentStep === 4 &&
-              <OrderComplete orderId={orderId!} />
-              }
-
-              {currentStep !== 4 &&
-              <div className="flex justify-between mt-8">
-                  {currentStep > 1 ?
-                <Button
-                  variant="outline"
-                  onClick={prevStep}
-                  className="flex items-center gap-2">
-
+              {currentStep !== 4 && (
+                <div className="flex justify-between mt-8">
+                  {currentStep > 1 ? (
+                    <Button
+                      variant="outline"
+                      onClick={prevStep}
+                      className="flex items-center gap-2"
+                    >
                       <ChevronLeft className="h-4 w-4" />
                       Back
-                    </Button> :
-
-                <div></div>
-                }
+                    </Button>
+                  ) : (
+                    <div></div>
+                  )}
                   <Button
-                  onClick={nextStep}
-                  disabled={!isStepComplete(currentStep)}
-                  className={`flex items-center gap-2 ${currentStep === 3 ? "bg-green-600 hover:bg-green-700" : ""}`}>
-
+                    onClick={nextStep}
+                    disabled={!isStepComplete(currentStep)}
+                    className={`flex items-center gap-2 ${currentStep === 3 ? "bg-green-600 hover:bg-green-700" : ""}`}
+                  >
                     {currentStep === 3 ? "Place Order" : "Continue"}
                     {currentStep !== 3 && <ChevronRight className="h-4 w-4" />}
                   </Button>
                 </div>
-              }
+              )}
             </CardContent>
           </Card>
         </div>
 
-        {currentStep !== 4 &&
-        <div>
+        {currentStep !== 4 && (
+          <div>
             <CheckoutSummary
-            items={items}
-            subtotal={subtotal}
-            shipping={shipping}
-            tax={tax}
-            total={total} />
-
+              items={items}
+              subtotal={subtotal}
+              shipping={shipping}
+              tax={tax}
+              total={total}
+            />
           </div>
-        }
+        )}
       </div>
-    </motion.div>);
-
+    </motion.div>
+  );
 };
 
 export default CheckoutPage;

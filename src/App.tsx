@@ -14,7 +14,6 @@ import AccountPage from "./pages/AccountPage";
 import CartPage from "./pages/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import RunwareImagesPage from "./pages/RunwareImagesPage";
 import Layout from "./components/Layout";
 import { AuthProvider } from "./contexts/AuthContext";
 import { CartProvider } from "./contexts/CartContext";
@@ -41,7 +40,6 @@ const App = () =>
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/product/:productId" element={<ProductDetailPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/runware-images" element={<RunwareImagesPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Route>
