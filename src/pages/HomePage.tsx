@@ -9,21 +9,21 @@ const HomePage = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center">
-        <div 
+        <div
           className="absolute inset-0 bg-black opacity-60 z-0"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwc2NlbmljJTIwcGhvdG9ncmFwaCUyMHNob3djYXNpbmclMjBhJTIwc2VyZW5lJTIwbmF0dXJhbCUyMGxhbmRzY2FwZSUyMHdpdGglMjBhJTIwZm9jdXMlMjBvbiUyMHZpYnJhbnQlMjBjb2xvcnMlMjBhbmQlMjBiYWxhbmNlZCUyMGNvbXBvc2l0aW9uLnxlbnwwfHx8fDE3NDcxODg0NjB8MA&ixlib=rb-4.1.0&q=80&w=200$w=1920")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
-          }}
-        />
+          }} />
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
+            className="max-w-3xl mx-auto text-center">
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               East Coast Rattery
             </h1>
@@ -31,17 +31,17 @@ const HomePage = () => {
               ASF Breeders of Quality – Frozen Shipping Nationwide & Live Pickup in NJ
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
+              <Button
                 className="bg-green-600 hover:bg-green-700 text-white border-green-700 px-8 py-6 text-lg animate-pulse"
-                asChild
-              >
+                asChild>
+
                 <Link to="/shop">Shop Frozen ASF</Link>
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg"
-                asChild
-              >
+                asChild>
+
                 <Link to="/live-pickup">Local Live Pickup</Link>
               </Button>
             </div>
@@ -53,37 +53,37 @@ const HomePage = () => {
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm"
-            >
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm">
+
               <div className="mb-4 text-5xl text-green-500">🐀</div>
               <h3 className="text-xl font-semibold mb-2">Premium ASF Genetics</h3>
               <p className="text-gray-300">Our African Soft Fur Rats come from carefully selected breeding stock for optimal health and size.</p>
             </motion.div>
             
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm"
-            >
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm">
+
               <div className="mb-4 text-5xl text-green-500">🚚</div>
               <h3 className="text-xl font-semibold mb-2">Frozen Shipping</h3>
               <p className="text-gray-300">We ship frozen ASF rats nationwide with proper insulation and dry ice to ensure quality upon arrival.</p>
             </motion.div>
             
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm"
-            >
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-background/5 backdrop-blur-sm">
+
               <div className="mb-4 text-5xl text-green-500">📍</div>
               <h3 className="text-xl font-semibold mb-2">Local NJ Pickup</h3>
               <p className="text-gray-300">Located in Bayville, NJ, we offer local pickup options for live ASF rats with scheduled appointments.</p>
@@ -96,13 +96,13 @@ const HomePage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="md:w-1/2"
-            >
+              className="md:w-1/2">
+
               <h2 className="text-3xl font-bold mb-6 text-green-500">What are ASF Rats?</h2>
               <p className="text-gray-300 mb-4">
                 African Soft Fur Rats (Mastomys natalensis) are not actually true rats but belong to the multimammate mouse family. 
@@ -117,19 +117,19 @@ const HomePage = () => {
                 for both the pet and feeder markets.
               </p>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="md:w-1/2"
-            >
+              className="md:w-1/2">
+
               <div className="rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1544808208-727498b3df07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwY2xvc2UtdXAlMjBwaG90b2dyYXBoJTIwb2YlMjBhbiUyMEFmcmljYW4lMjBTb2Z0JTIwRnVyJTIwUmF0JTJDJTIwc2hvd2Nhc2luZyUyMGl0cyUyMHNvZnQlMjBmdXIlMjBhbmQlMjBkaXN0aW5jdCUyMGZlYXR1cmVzLnxlbnwwfHx8fDE3NDcxODg0NTd8MA&ixlib=rb-4.1.0&q=80&w=200$w=800" 
-                  alt="African Soft Fur Rat" 
-                  className="w-full h-auto transform hover:scale-105 transition-transform duration-300"
-                />
+                <img
+                  src="https://images.unsplash.com/photo-1544808208-727498b3df07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MTg3MTl8MHwxfHNlYXJjaHwxfHxBJTIwY2xvc2UtdXAlMjBwaG90b2dyYXBoJTIwb2YlMjBhbiUyMEFmcmljYW4lMjBTb2Z0JTIwRnVyJTIwUmF0JTJDJTIwc2hvd2Nhc2luZyUyMGl0cyUyMHNvZnQlMjBmdXIlMjBhbmQlMjBkaXN0aW5jdCUyMGZlYXR1cmVzLnxlbnwwfHx8fDE3NDcxODg0NTd8MA&ixlib=rb-4.1.0&q=80&w=200$w=800"
+                  alt="African Soft Fur Rat"
+                  className="w-full h-auto transform hover:scale-105 transition-transform duration-300" />
+
               </div>
             </motion.div>
           </div>
@@ -145,17 +145,17 @@ const HomePage = () => {
             we've got you covered with premium quality ASF rats.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button 
+            <Button
               className="bg-white text-green-900 hover:bg-gray-100 px-8 py-6 text-lg"
-              asChild
-            >
+              asChild>
+
               <Link to="/shop">Browse Products</Link>
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg"
-              asChild
-            >
+              asChild>
+
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
@@ -208,8 +208,8 @@ const HomePage = () => {
           </Carousel>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default HomePage;

@@ -8,15 +8,15 @@ import { motion } from "motion/react";
 const ShippingInfoPage = () => {
   // List of states we ship to
   const shippingStates = [
-    "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", 
-    "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa", 
-    "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", 
-    "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", 
-    "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", 
-    "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", 
-    "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", 
-    "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-  ];
+  "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
+  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+  "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+
 
   return (
     <div className="min-h-screen bg-background pb-16">
@@ -61,11 +61,11 @@ const ShippingInfoPage = () => {
 
               <Card className="bg-background/40 backdrop-blur-sm border border-border overflow-hidden">
                 <div className="relative h-40">
-                  <img 
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
-                    alt="ASF rat" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                    alt="ASF rat"
+                    className="w-full h-full object-cover" />
+
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <h3 className="text-white text-xl font-bold">Ready to Order?</h3>
                   </div>
@@ -74,10 +74,10 @@ const ShippingInfoPage = () => {
                   <p className="text-gray-300 mb-4">
                     Browse our selection of quality frozen ASF rats with nationwide shipping.
                   </p>
-                  <Button 
+                  <Button
                     className="w-full bg-green-600 hover:bg-green-700 text-white"
-                    asChild
-                  >
+                    asChild>
+
                     <Link to="/shop">Shop Now</Link>
                   </Button>
                 </CardContent>
@@ -87,12 +87,12 @@ const ShippingInfoPage = () => {
 
           {/* Main Content */}
           <div className="lg:col-span-2">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="space-y-12"
-            >
+              className="space-y-12">
+
               {/* Shipping Process */}
               <section id="shipping-process" className="scroll-mt-24">
                 <h2 className="text-2xl font-semibold mb-6 text-green-500 border-b border-border pb-2">Shipping Process</h2>
@@ -232,11 +232,11 @@ const ShippingInfoPage = () => {
                   
                   <h3 className="text-lg font-medium text-green-400 mt-6 mb-3">States We Ship To:</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                    {shippingStates.map(state => (
-                      <div key={state} className="bg-background/20 p-2 rounded border border-border text-sm text-center">
+                    {shippingStates.map((state) =>
+                    <div key={state} className="bg-background/20 p-2 rounded border border-border text-sm text-center">
                         {state}
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               </section>
@@ -301,8 +301,8 @@ const ShippingInfoPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ShippingInfoPage;

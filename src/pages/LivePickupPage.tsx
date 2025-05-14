@@ -4,13 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { 
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
-} from "@/components/ui/select";
+  SelectValue } from
+"@/components/ui/select";
 
 const LivePickupPage = () => {
   return (
@@ -34,16 +34,16 @@ const LivePickupPage = () => {
             <div className="bg-background/40 backdrop-blur-sm rounded-lg p-6 mb-8 border border-border">
               <h2 className="text-2xl font-semibold mb-4 text-green-500">Pickup Location</h2>
               <div className="aspect-video w-full rounded-lg overflow-hidden mb-6">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24510.03085430431!2d-74.16770841067412!3d39.91351385148431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c19a16c8c39d95%3A0x5a47a2b5a70f4af!2sBayville%2C%20NJ%2008721!5e0!3m2!1sen!2sus!4v1661530555781!5m2!1sen!2sus" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24510.03085430431!2d-74.16770841067412!3d39.91351385148431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c19a16c8c39d95%3A0x5a47a2b5a70f4af!2sBayville%2C%20NJ%2008721!5e0!3m2!1sen!2sus!4v1661530555781!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="East Coast Rattery Location"
-                ></iframe>
+                  title="East Coast Rattery Location">
+                </iframe>
               </div>
               <div className="text-gray-300">
                 <p className="mb-2"><strong className="text-green-400">Address:</strong> Bayville, NJ 08721</p>
@@ -152,26 +152,26 @@ const LivePickupPage = () => {
                     
                     <div className="space-y-2">
                       <Label htmlFor="order_details">What Would You Like to Pick Up?</Label>
-                      <Textarea 
-                        id="order_details" 
-                        placeholder="Please specify which ASF rats you'd like (size, quantity, etc.)" 
-                        className="min-h-[100px] bg-background/60"
-                      />
+                      <Textarea
+                        id="order_details"
+                        placeholder="Please specify which ASF rats you'd like (size, quantity, etc.)"
+                        className="min-h-[100px] bg-background/60" />
+
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="notes">Additional Notes</Label>
-                      <Textarea 
-                        id="notes" 
-                        placeholder="Any special requirements or questions?" 
-                        className="min-h-[100px] bg-background/60"
-                      />
+                      <Textarea
+                        id="notes"
+                        placeholder="Any special requirements or questions?"
+                        className="min-h-[100px] bg-background/60" />
+
                     </div>
                     
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-green-600 hover:bg-green-700 text-white mt-4"
-                    >
+                    <Button
+                      type="submit"
+                      className="w-full bg-green-600 hover:bg-green-700 text-white mt-4">
+
                       Submit Pickup Request
                     </Button>
                     
@@ -185,8 +185,8 @@ const LivePickupPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default LivePickupPage;

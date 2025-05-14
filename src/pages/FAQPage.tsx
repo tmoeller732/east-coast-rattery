@@ -33,12 +33,12 @@ const FAQPage = () => {
           </Button>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto"
-        >
+          className="max-w-3xl mx-auto">
+
           {/* About ASF Rats */}
           <section id="about-asf" className="mb-12 scroll-mt-24">
             <h2 className="text-2xl font-semibold mb-6 text-green-500 border-b border-border pb-2">About ASF Rats</h2>
@@ -329,8 +329,8 @@ const FAQPage = () => {
           </div>
         </motion.div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default FAQPage;
