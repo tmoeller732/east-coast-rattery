@@ -37,9 +37,9 @@ const Navbar = () => {
         </button>
 
         {/* Desktop navigation */}
-        <div className="hidden md:flex items-center justify-between flex-1">
+        <div className="hidden md:flex items-center flex-1">
           {/* Left navigation */}
-          <nav className="flex items-center space-x-0.5">
+          <nav className="flex items-center space-x-0.5 flex-1 justify-end mr-4">
             <Button
               variant="ghost"
               className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
@@ -61,7 +61,7 @@ const Navbar = () => {
           </nav>
           
           {/* Logo (center) */}
-          <Link to="/" className="flex items-center mx-6">
+          <Link to="/" className="flex items-center mx-4">
             <img
               src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
               alt="East Coast Rattery Logo"
@@ -69,8 +69,8 @@ const Navbar = () => {
           </Link>
           
           {/* Right navigation */}
-          <div className="flex items-center justify-end">
-            <nav className="flex items-center space-x-0.5 mr-4">
+          <div className="flex items-center flex-1">
+            <nav className="flex items-center space-x-0.5 ml-4">
               <Button
                 variant="ghost"
                 className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
@@ -109,9 +109,9 @@ const Navbar = () => {
         <div className="flex-1 flex justify-center md:hidden">
           <Link to="/" className="flex items-center">
             <img
-                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
-                alt="East Coast Rattery Logo"
-                className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
+              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
+              alt="East Coast Rattery Logo"
+              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
           </Link>
         </div>
 
@@ -171,8 +171,8 @@ const Navbar = () => {
             </div>
           </div>
       </div>
-    </header>
-  );
+    </header>);
+
 };
 
 export default Navbar;
