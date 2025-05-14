@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +25,7 @@ const Navbar = () => {
       "bg-background"}`
       }>
 
-      <div className="container mx-auto flex justify-between items-center relative">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Mobile menu button */}
         <button
           className="md:hidden text-foreground"
@@ -36,25 +37,37 @@ const Navbar = () => {
         </button>
 
         {/* Left navigation items for desktop */}
-        <nav className="hidden md:flex items-center space-x-1">
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+        <nav className="hidden md:flex items-center space-x-0.5 mr-3">
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/">Home</Link>
           </Button>
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shop' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/shop">Shop</Link>
           </Button>
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/shipping' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/shipping">Shipping</Link>
           </Button>
         </nav>
         
         {/* Logo (centered on desktop) */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
+        <div className="hidden md:block mx-3">
           <Link to="/" className="flex items-center">
             <img
               src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
               alt="East Coast Rattery Logo"
-              className="h-12 w-auto transition-transform duration-300 hover:scale-105" />
+              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
           </Link>
         </div>
         
@@ -64,19 +77,31 @@ const Navbar = () => {
             <img
               src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
               alt="East Coast Rattery Logo"
-              className="h-12 w-auto transition-transform duration-300 hover:scale-105" />
+              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
           </Link>
         </div>
 
         {/* Right navigation items for desktop */}
-        <nav className="hidden md:flex items-center space-x-1">
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+        <nav className="hidden md:flex items-center space-x-0.5 ml-3">
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/faq">FAQ</Link>
           </Button>
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/contact' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/contact">Contact</Link>
           </Button>
-          <Button variant="ghost" className="hover:text-green-500 hover:bg-green-500/10" asChild>
+          <Button 
+            variant="ghost" 
+            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/live-pickup' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+            asChild
+          >
             <Link to="/live-pickup">Live Pickup (NJ)</Link>
           </Button>
           <Button variant="outline" size="icon" className="ml-4 hover:text-green-500 hover:border-green-500">
@@ -95,22 +120,46 @@ const Navbar = () => {
         {isMobileMenuOpen &&
         <div className="absolute top-full left-0 right-0 bg-background border-b border-border z-50 md:hidden">
             <div className="container mx-auto py-4 px-4 flex flex-col space-y-2">
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               </Button>
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/shop' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
               </Button>
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/live-pickup' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/live-pickup" onClick={() => setIsMobileMenuOpen(false)}>Live Pickup (NJ)</Link>
               </Button>
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/shipping' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/shipping" onClick={() => setIsMobileMenuOpen(false)}>Shipping</Link>
               </Button>
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</Link>
               </Button>
-              <Button variant="ghost" className="justify-start hover:text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <Button 
+                variant="ghost" 
+                className={`justify-start hover:text-green-500 hover:bg-green-500/10 w-full ${location.pathname === '/contact' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`} 
+                asChild
+              >
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </Button>
             </div>
