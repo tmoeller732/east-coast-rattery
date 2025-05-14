@@ -15,7 +15,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth();
   const { getItemCount } = useCart();
-  
+
   const cartItemCount = getItemCount();
   const unreadMessages = user?.unreadMessages || 0;
 
@@ -105,39 +105,39 @@ const Navbar = () => {
           
           {/* Account and Cart icons */}
           <div className="flex items-center space-x-2 ml-4">
-            <Button 
-              variant="outline" 
-              size="icon" 
+            <Button
+              variant="outline"
+              size="icon"
               className="hover:text-green-500 hover:border-green-500 relative"
-              onClick={() => isAuthenticated ? navigate('/account') : setLoginDialogOpen(true)}
-            >
+              onClick={() => isAuthenticated ? navigate('/account') : setLoginDialogOpen(true)}>
+
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
-              {isAuthenticated && unreadMessages > 0 && (
-                <Badge 
-                  variant="secondary" 
-                  className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold"
-                >
+              {isAuthenticated && unreadMessages > 0 &&
+              <Badge
+                variant="secondary"
+                className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold">
+
                   {unreadMessages}
                 </Badge>
-              )}
+              }
             </Button>
-            <Button 
-              variant="outline" 
-              size="icon" 
+            <Button
+              variant="outline"
+              size="icon"
               className="hover:text-green-500 hover:border-green-500 relative"
-              onClick={() => navigate('/cart')}
-            >
+              onClick={() => navigate('/cart')}>
+
               <ShoppingCart className="h-5 w-5" />
               <span className="sr-only">Cart</span>
-              {cartItemCount > 0 && (
-                <Badge 
-                  variant="secondary" 
-                  className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold"
-                >
+              {cartItemCount > 0 &&
+              <Badge
+                variant="secondary"
+                className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold">
+
                   {cartItemCount}
                 </Badge>
-              )}
+              }
             </Button>
             <LoginDialog isOpen={loginDialogOpen} setIsOpen={setLoginDialogOpen} />
           </div>
@@ -155,39 +155,39 @@ const Navbar = () => {
 
         {/* Account and Cart icons for mobile */}
         <div className="flex items-center md:hidden space-x-2">
-          <Button 
-            variant="outline" 
-            size="icon" 
+          <Button
+            variant="outline"
+            size="icon"
             className="hover:text-green-500 hover:border-green-500 relative"
-            onClick={() => isAuthenticated ? navigate('/account') : setLoginDialogOpen(true)}
-          >
+            onClick={() => isAuthenticated ? navigate('/account') : setLoginDialogOpen(true)}>
+
             <User className="h-5 w-5" />
             <span className="sr-only">Account</span>
-            {isAuthenticated && unreadMessages > 0 && (
-              <Badge 
-                variant="secondary" 
-                className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold"
-              >
+            {isAuthenticated && unreadMessages > 0 &&
+            <Badge
+              variant="secondary"
+              className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold">
+
                 {unreadMessages}
               </Badge>
-            )}
+            }
           </Button>
-          <Button 
-            variant="outline" 
-            size="icon" 
+          <Button
+            variant="outline"
+            size="icon"
             className="hover:text-green-500 hover:border-green-500 relative"
-            onClick={() => navigate('/cart')}
-          >
+            onClick={() => navigate('/cart')}>
+
             <ShoppingCart className="h-5 w-5" />
             <span className="sr-only">Cart</span>
-            {cartItemCount > 0 && (
-              <Badge 
-                variant="secondary" 
-                className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold"
-              >
+            {cartItemCount > 0 &&
+            <Badge
+              variant="secondary"
+              className="absolute -top-2 -right-2 bg-green-500 text-white border-0 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold">
+
                 {cartItemCount}
               </Badge>
-            )}
+            }
           </Button>
         </div>
 

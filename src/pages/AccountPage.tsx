@@ -25,28 +25,28 @@ const AccountPage = () => {
     e.preventDefault();
     toast({
       title: "Profile Updated",
-      description: "Your profile information has been updated successfully.",
+      description: "Your profile information has been updated successfully."
     });
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="container max-w-5xl mx-auto py-12 px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+      transition={{ duration: 0.5 }}>
+
       <div className="flex flex-col space-y-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-3xl font-bold">My Account</h1>
             <p className="text-muted-foreground">Welcome back, {user?.name}</p>
           </div>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             onClick={logout}
-            className="flex items-center gap-2"
-          >
+            className="flex items-center gap-2">
+
             <LogOut className="h-4 w-4" />
             Sign Out
           </Button>
@@ -65,11 +65,11 @@ const AccountPage = () => {
             <TabsTrigger value="messages" className="flex items-center gap-2">
               <MessageSquare className="h-4 w-4" />
               <span className="hidden sm:inline">Messages</span>
-              {user?.unreadMessages ? (
-                <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-green-500 rounded-full">
+              {user?.unreadMessages ?
+              <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-green-500 rounded-full">
                   {user.unreadMessages}
-                </span>
-              ) : null}
+                </span> :
+              null}
             </TabsTrigger>
             <TabsTrigger value="settings" className="flex items-center gap-2">
               <Settings className="h-4 w-4" />
@@ -141,10 +141,10 @@ const AccountPage = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {user?.unreadMessages ? (
-                  <div className="space-y-4">
-                    {Array.from({ length: user.unreadMessages }).map((_, i) => (
-                      <div key={i} className="p-4 border rounded-lg">
+                {user?.unreadMessages ?
+                <div className="space-y-4">
+                    {Array.from({ length: user.unreadMessages }).map((_, i) =>
+                  <div key={i} className="p-4 border rounded-lg">
                         <div className="flex justify-between items-start">
                           <div>
                             <h4 className="font-medium">New update about your order</h4>
@@ -157,17 +157,17 @@ const AccountPage = () => {
                           </span>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-12">
+                  )}
+                  </div> :
+
+                <div className="text-center py-12">
                     <MessageSquare className="h-12 w-12 mx-auto text-muted-foreground" />
                     <h3 className="mt-4 text-lg font-medium">No messages</h3>
                     <p className="mt-2 text-muted-foreground">
                       You don't have any unread messages or notifications.
                     </p>
                   </div>
-                )}
+                }
               </CardContent>
             </Card>
           </TabsContent>
@@ -209,8 +209,8 @@ const AccountPage = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </motion.div>
-  );
+    </motion.div>);
+
 };
 
 export default AccountPage;

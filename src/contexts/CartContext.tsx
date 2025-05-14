@@ -28,7 +28,7 @@ const CartContext = createContext<CartContextType>({
   updateQuantity: () => {},
   clearCart: () => {},
   getCartTotal: () => 0,
-  getItemCount: () => 0,
+  getItemCount: () => 0
 });
 
 // Custom hook to use cart context
@@ -56,10 +56,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   // Add item to cart
   const addItem = (item: Omit<CartItem, 'quantity'>) => {
-    setItems(currentItems => {
+    setItems((currentItems) => {
       // Check if item already exists
-      const existingItemIndex = currentItems.findIndex(i => i.id === item.id);
-      
+      const existingItemIndex = currentItems.findIndex((i) => i.id === item.id);
+
       if (existingItemIndex > -1) {
         // Update quantity if item exists
         const updatedItems = [...currentItems];
@@ -74,7 +74,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   // Remove item from cart
   const removeItem = (id: string) => {
-    setItems(currentItems => currentItems.filter(item => item.id !== id));
+    setItems((currentItems) => currentItems.filter((item) => item.id !== id));
   };
 
   // Update item quantity
@@ -83,11 +83,11 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       removeItem(id);
       return;
     }
-    
-    setItems(currentItems => 
-      currentItems.map(item => 
-        item.id === id ? { ...item, quantity } : item
-      )
+
+    setItems((currentItems) =>
+    currentItems.map((item) =>
+    item.id === id ? { ...item, quantity } : item
+    )
     );
   };
 
@@ -98,7 +98,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   // Calculate total price of items in cart
   const getCartTotal = () => {
-    return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   // Get total number of items in cart
@@ -116,9 +116,9 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         clearCart,
         getCartTotal,
         getItemCount
-      }}
-    >
+      }}>
+
       {children}
-    </CartContext.Provider>
-  );
+    </CartContext.Provider>);
+
 };

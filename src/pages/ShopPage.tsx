@@ -136,10 +136,12 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:border-green-500 h-full flex flex-col bg-background/40 backdrop-blur-sm">
       <div className="relative">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105" />
+        <div className="cursor-pointer" onClick={() => window.location.href = `/product/${product.id}`}>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105" />
+        </div>
 
         {localOnly &&
         <Badge className="absolute top-2 right-2 bg-amber-600">
@@ -149,7 +151,9 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
       </div>
       <CardHeader>
         <CardTitle className="flex items-start justify-between">
-          <span>{product.name}</span>
+          <span className="cursor-pointer hover:text-green-500 transition-colors" onClick={() => window.location.href = `/product/${product.id}`}>
+            {product.name}
+          </span>
           <span className="text-green-500">${selectedSizeObj?.price.toFixed(2)}</span>
         </CardTitle>
         <div className="text-sm text-muted-foreground">Weight: {product.weightRange}</div>
@@ -178,8 +182,8 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
           )}
         </RadioGroup>
       </CardContent>
-      <CardFooter>
-        <Button 
+      <CardFooter className="flex flex-col gap-2">
+        <Button
           className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
           onClick={() => {
             if (!selectedSizeObj) return;
@@ -193,24 +197,30 @@ const ProductCard = ({ product, localOnly = false }: ProductProps) => {
               });
               toast({
                 title: "Added to cart",
-                description: `${product.name} - ${selectedSizeObj.name} has been added to your cart.`,
+                description: `${product.name} - ${selectedSizeObj.name} has been added to your cart.`
               });
               setIsAdding(false);
             }, 500);
           }}
-          disabled={isAdding}
-        >
-          {isAdding ? (
-            <>
+          disabled={isAdding}>
+
+          {isAdding ?
+          <>
               <Check className="h-4 w-4 animate-ping" />
               Adding...
-            </>
-          ) : (
-            <>
+            </> :
+
+          <>
               <ShoppingCart className="h-4 w-4" />
               Add to Cart
             </>
-          )}
+          }
+        </Button>
+        <Button
+          variant="outline" 
+          className="w-full border-green-500 text-green-500 hover:bg-green-100 dark:hover:bg-green-900/20"
+          onClick={() => window.location.href = `/product/${product.id}`}>
+          View Details
         </Button>
       </CardFooter>
     </Card>);

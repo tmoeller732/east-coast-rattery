@@ -27,7 +27,7 @@ const AuthContext = createContext<AuthContextType>({
   register: async () => {},
   logout: () => {},
   loading: false,
-  error: null,
+  error: null
 });
 
 // Custom hook to use auth context
@@ -56,10 +56,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      
+
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       // For demo, create a mock user with the provided email
       const newUser: User = {
         id: Math.random().toString(36).substr(2, 9),
@@ -67,7 +67,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email,
         unreadMessages: Math.floor(Math.random() * 5) // Random number of unread messages
       };
-      
+
       setUser(newUser);
       localStorage.setItem('user', JSON.stringify(newUser));
     } catch (err) {
@@ -82,17 +82,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      
+
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       const newUser: User = {
         id: Math.random().toString(36).substr(2, 9),
         name,
         email,
         unreadMessages: 0
       };
-      
+
       setUser(newUser);
       localStorage.setItem('user', JSON.stringify(newUser));
     } catch (err) {
@@ -109,18 +109,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider 
-      value={{ 
-        user, 
+    <AuthContext.Provider
+      value={{
+        user,
         isAuthenticated: !!user,
         login,
         register,
         logout,
         loading,
         error
-      }}
-    >
+      }}>
+
       {children}
-    </AuthContext.Provider>
-  );
+    </AuthContext.Provider>);
+
 };
