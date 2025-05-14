@@ -28,17 +28,17 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center relative">
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground transition-colors duration-200 hover:text-green-500"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 transition-transform duration-300 ease-in-out" style={{ transform: isMobileMenuOpen ? 'rotate(90deg)' : 'rotate(0)' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
           </svg>
         </button>
 
         {/* Logo (centered on desktop) */}
-        <div className="hidden md:flex items-center">
-          <nav className="flex items-center space-x-0.5 mr-3">
+        <div className="hidden md:flex items-center justify-center flex-1">
+          <nav className="flex items-center space-x-0.5">
             <Button
               variant="ghost"
               className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
@@ -62,7 +62,7 @@ const Navbar = () => {
             </Button>
           </nav>
           
-          <Link to="/" className="flex items-center mx-4">
+          <Link to="/" className="flex items-center mx-6">
             <img
               src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
               alt="East Coast Rattery Logo"
@@ -73,31 +73,31 @@ const Navbar = () => {
         <div className="flex-1 flex justify-center md:hidden">
           <Link to="/" className="flex items-center">
             <img
-              src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
-              alt="East Coast Rattery Logo"
-              className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
+                src="https://newoaks.s3.us-west-1.amazonaws.com/AutoDev/13791/9158981f-c3a2-4028-8f3b-4b1a1b8f8f5b.png"
+                alt="East Coast Rattery Logo"
+                className="h-12 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110 hover:rotate-1 hover:drop-shadow-md" />
           </Link>
         </div>
 
-          <nav className="flex items-center space-x-0.5 ml-3">
+          <nav className="flex items-center space-x-0.5">
           <Button
-            variant="ghost"
-            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-            asChild>
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/faq' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
 
             <Link to="/faq">FAQ</Link>
           </Button>
           <Button
-            variant="ghost"
-            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/contact' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-            asChild>
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/contact' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
 
             <Link to="/contact">Contact</Link>
           </Button>
           <Button
-            variant="ghost"
-            className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/live-pickup' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
-            asChild>
+              variant="ghost"
+              className={`hover:text-green-500 hover:bg-green-500/10 ${location.pathname === '/live-pickup' ? 'bg-green-500/15 text-green-500 font-medium' : ''}`}
+              asChild>
 
             <Link to="/live-pickup">Live Pickup (NJ)</Link>
           </Button>
@@ -115,8 +115,9 @@ const Navbar = () => {
         </Button>
 
         {/* Mobile menu */}
-        {isMobileMenuOpen &&
-        <div className="absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg z-50 md:hidden" style={{position: 'absolute', width: '100%'}}>
+        <div 
+          className={`absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg z-50 md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`} 
+          style={{ position: 'absolute', width: '100%' }}>
             <div className="container mx-auto py-4 px-4 flex flex-col space-y-2">
               <Button
               variant="ghost"
@@ -162,7 +163,6 @@ const Navbar = () => {
               </Button>
             </div>
           </div>
-        }
       </div>
     </header>);
 
